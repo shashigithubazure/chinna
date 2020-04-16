@@ -1,0 +1,13 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: install web server on all nodes
+    apt:
+     name: apache2
+     state: present
+
+  - name: start apache 2 server
+    service:
+     name: apache2
+     state: started
